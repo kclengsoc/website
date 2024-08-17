@@ -1,0 +1,17 @@
+{
+	"name": "kcl-engineering-society",
+	"version": "1.0.0",
+	"description": "A website for the King's College London Engineering Society",
+	"main": "index.js",
+	"author": "Thomas <hi@thomasng.me>",
+	"license": "MIT",
+	"private": true,
+	"devDependencies": {
+		"@11ty/eleventy": "3.0.0-beta.1",
+		"prettier": "^3.3.3"
+	},
+	"scripts": {
+		"serve": "eleventy --serve",
+		"build": "eleventy"
+	}
+}
