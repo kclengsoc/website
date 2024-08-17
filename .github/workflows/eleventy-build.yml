@@ -3,7 +3,7 @@ name: Eleventy Build
 on:
   push:
     branches:
-      - main
+      - gh-pages
 
 jobs:
   deploy:
@@ -23,5 +23,5 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: $ACTION_DEPLOY_KEY
-          publish_dir: ./site
+          deploy_key: ${{ secrets.ACTION_DEPLOY_KEY }}
+          publish_dir: ./_site
