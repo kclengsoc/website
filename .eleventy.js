@@ -6,6 +6,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("./src/static/");
 	eleventyConfig.addPassthroughCopy("./.htaccess");
 	eleventyConfig.addPassthroughCopy("./src/robots.txt");
+	eleventyConfig.addPassthroughCopy("./CNAME");
 
 	eleventyConfig.setLiquidOptions({
 		dynamicPartials: false,
