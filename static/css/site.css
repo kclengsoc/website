@@ -153,6 +153,10 @@ h6 {
 	min-height: 100vh;
 }
 
+.no-underline {
+	text-decoration: none;
+}
+
 /* CSS specific to elements or certain elements */
 html {
 	font-family:
@@ -297,6 +301,11 @@ main {
 	max-width: fit-content;
 }
 
+.reading-width {
+	width: 65%;
+	margin: 0 auto;
+}
+
 footer {
 	background-color: var(--darker-background-color);
 	width: 100%;
@@ -373,6 +382,10 @@ footer {
 
 	.large {
 		font-size: 2rem;
+	}
+
+	.reading-width {
+		width: 100%;
 	}
 }
 
