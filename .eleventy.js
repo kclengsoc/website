@@ -32,6 +32,16 @@ module.exports = function (eleventyConfig) {
 		},
 	});
 
+	eleventyConfig.addCollection("futureEvents", (collection) => {
+		const today = new Date();
+		return collection.getFilteredByTags("event").filter((e) => new Date(e.date) > today);
+	});
+
+	eleventyConfig.addCollection("pastEvents", (collection) => {
+		const today = new Date();
+		return collection.getFilteredByTags("event").filter((e) => new Date(e.date) < today);
+	});
+
 	return {
 		dataTemplateEngine: "liquid",
 		dir: {

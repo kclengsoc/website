@@ -1,4 +1,5 @@
 ---
+layout: event
 tags: event
 title: Meet and Greet
 date: 2024-09-27

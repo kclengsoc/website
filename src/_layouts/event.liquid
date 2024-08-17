@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<div>
+	<br />
+	<a class="medium" href="/events">< Back to events</a>
+	<br />
+	<br />
+	<div class="reading-width">
+		<h1>{{ title }}</h1>
+		<p class="medium">{{ location }}</p>
+		<p class="gray medium">{{ date | date: "%Y %B %d%q" }}</p>
+
+		<br />
+		<hr />
+		<br />
+
+		{{ content }}
+	</div>
+</div>

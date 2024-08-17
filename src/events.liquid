@@ -3,4 +3,35 @@ layout: default
 title: Events
 ---
 
-<h1>Events</h1>
+<div class="reading-width">
+	<h1>Events</h1>
+	<p>We host a variety of events throughout the year, ranging from pub socials, to CAD workshops, to external speeches
+		from industry professionals.</p>
+
+	<div>
+		{% assign futureEvents = collections.futureEvents | sort: "date" %}
+		{% for eventItem in futureEvents %}
+		<div class="eventItem">
+			<h3><a href="{{ eventItem.url }}">{{ eventItem.data.title }}</a></h3>
+			<p class="gray">{{ eventItem.date | date: "%A, %d %B %Y" }}</p>
+			{{ eventItem.content | truncatewords: 5, ' <a class="no-underline" href="' | append: eventItem.url | append: '">[...]</a>' }}
+		</div>
+		{% endfor %}
+	</div>
+
+	<br />
+	<hr />
+	<br />
+
+	<p>Curious about what we've done in the past?</p>
+	<div>
+		{% assign pastEvents = collections.pastEvents | sort: "date" %}
+		{% for eventItem in pastEvents reversed %}
+		<div class="eventItem">
+			<h3><a href="{{ eventItem.url }}">{{ eventItem.data.title }}</a></h3>
+			<p class="gray">{{ eventItem.date | date: "%A, %d %B %Y" }}</p>
+			{{ eventItem.content | truncatewords: 4, ' <a class="no-underline" href="' | append: eventItem.url | append: '">[...]</a>' }}
+		</div>
+	</div>
+	{% endfor %}
+</div>
