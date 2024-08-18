@@ -78,17 +78,17 @@ Dependencies come in many forms. For example, [NumPy](https://numpy.org/) is a v
 
 ### On Eleventy
 
-Creating a website without any kind of prerequisite knowledge is hard enough. Eleventy, in my opinion, is simple enough that you can get by if you learn fundamental HTML/CSS/JS. There are definitely more powerful and/or structured static site generators out there, such as Jekyll or Hugo. However, they require more cognitive load to pick up if you have no dev background. We're engineers, not web developers!
+Creating a website without any kind of prerequisite knowledge is hard enough. Eleventy, in my opinion, is simple enough that you quickly pick it up, provided you learn some JavaScript, and use it with the documentation open. But most importantly, it's unobtrusive. There are definitely more powerful and/or structured static site generators out there, such as Jekyll or Hugo. However, they require more cognitive load to install, configure, and learn if you have no dev background. We're engineers, not web developers!
 
-As for JavaScript frameworks like React or Vue, they're nice frameworks, but completely overkill for a static site with near-zero user interactivity. There is no need to ship 2MB of JavaScript client-side just to render a landing page! And if you need functionality, just write it in vanilla JavaScript.
+As for JavaScript frameworks like React or Vue, they're nice frameworks, but completely overkill for a static site with near-zero user interactivity. There is no need to ship 2MB of JavaScript client-side just to render a landing page! And if you need functionality, write it in vanilla JavaScript.
 
 ### On Liquid
 
-Liquid is a templating language that was created by Shopify, and has been widely used enough that documentation and StackOverflow pages for it are readily available. It seems contradictory to have Liquid in this project, especially after I have talked about reducing the cognitive load needed to pick up development on this site. And I will admit, it is to an extent. But Liquid provides portability for this project- should Eleventy suddenly disappear, or we wish to move to another platform, Liquid is widely available to plug and play. In addition, adds only a little syntactical overhead to HTML, making it easy to read and pick up for a beginner.
+Liquid is a templating language that was created by Shopify, and has been widely used enough that documentation and StackOverflow pages for it are readily available. It seems contradictory to have Liquid in this project, especially after I have talked about reducing the cognitive load needed to pick up development on this site. And I will admit, it is to an extent. But Liquid provides portability for this project- should Eleventy suddenly disappear, or we wish to move to another platform, Liquid is widely available to plug and play. In addition, it adds only a little syntactical overhead to HTML, making it easy to read and pick up for a beginner.
 
 ### On CSS
 
-CSS frameworks are absolutely fantastic, but not when you are starting from scratch with next to no knowledge on web development. I had thought of using utility-class based frameworks like Tailwind or Tachyons. However, no matter how simple they are, I have three qualms with them for this project:
+CSS frameworks are absolutely fantastic, but not when you are starting from scratch with next to no knowledge on web development. I had thought of using utility-class based frameworks like Tailwind or Tachyons. Yet, no matter how simple they are, I have three qualms with them for this project:
 
 1. They have a steep learning curve for a CSS beginner,
 
