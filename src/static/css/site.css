@@ -259,7 +259,7 @@ main {
 	display: inline-flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	gap: 2.5rem;
+	gap: 5rem;
 }
 
 .home-content > div {
@@ -269,7 +269,7 @@ main {
 	align-items: center;
 	justify-content: space-between;
 	height: fit-content;
-	gap: 1.5em;
+	gap: 1.5rem;
 }
 
 .home-content section {
@@ -277,7 +277,7 @@ main {
 }
 
 .home-content img {
-	height: 15em;
+	max-height: 15em;
 	width: auto;
 	object-fit: contain;
 }
@@ -369,11 +369,14 @@ footer {
 
 	main {
 		width: auto;
-		margin: 0.5em 1em;
+		margin: 0.5em 1.5em;
 	}
 
 	.home-content section {
-		width: 95%;
+		width: 100%;
+		text-align: start;
+		word-wrap: break-word;
+		hyphens: manual;
 	}
 
 	.emphasis {

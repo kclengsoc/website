@@ -53,7 +53,7 @@ title: Home
 				{% assign events = collections.futureEvents | sort: "date" %}
 				{% for eventItem in events | limit: 3 %}
 				<div class="eventItem">
-					<h3><a href="{{ eventItem.url }}">{{ eventItem.data.title }}</a></h3>
+					<h2><a href="{{ eventItem.url }}">{{ eventItem.data.title }}</a></h2>
 					<p class="gray">{{ eventItem.date | date: "%A, %d %B %Y" }}</p>
 					{{ eventItem.content }}
 				</div>
