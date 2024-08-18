@@ -63,7 +63,19 @@
 	text-decoration: none;
 }
 
+.full-width {
+	width: 100%;
+}
+
 .reading-width {
 	width: 65%;
 	margin: 0 auto;
+}
+
+.bg-primary {
+	background: var(--primary-background-color);
+}
+
+.bg-secondary {
+	background: var(--secondary-background-color);
 }
