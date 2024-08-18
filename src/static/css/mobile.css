@@ -1,0 +1,66 @@
+/* Mobile optimisations; 768px is the typical tablet width in portrait mode, 1024px for any laptop */
+@media screen and (max-width: 768px) {
+	html {
+		font-size: 18px;
+	}
+
+	body {
+		max-width: 100%;
+		margin: 0;
+	}
+
+	header {
+		flex-direction: column;
+		padding: 0 1.25em;
+		padding-top: 0.25em;
+	}
+
+	header .logo {
+		width: 100%;
+		text-align: center;
+	}
+
+	header a {
+		margin: auto;
+	}
+
+	header nav {
+		width: 100%;
+		margin-top: 1.5em;
+		justify-content: center;
+	}
+
+	header nav a {
+		font-size: 1.1em;
+	}
+
+	main {
+		width: auto;
+		margin: 0.5em 1.5em;
+	}
+
+	.home-content section {
+		width: 100%;
+		text-align: start;
+		word-wrap: break-word;
+		hyphens: manual;
+	}
+
+	.emphasis {
+		font-size: 2rem;
+	}
+
+	.large {
+		font-size: 2rem;
+	}
+
+	.reading-width {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	header {
+		padding: 1em 1.25rem;
+	}
+}

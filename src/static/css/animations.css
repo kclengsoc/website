@@ -1,0 +1,24 @@
+/* Animation classes */
+.fade-in {
+	animation: fadeIn 2s;
+}
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/* Accessibility styling */
+@media (prefers-reduced-motion) {
+	@keyframes fadeIn {
+		0% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+}

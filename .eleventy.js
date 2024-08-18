@@ -1,5 +1,8 @@
 const fs = require("fs");
+const path = require("path");
 const NOT_FOUND_PATH = "_site/404.html";
+const browserslist = require("browserslist");
+const { bundle, browserslistToTargets, composeVisitors } = require("lightningcss");
 
 module.exports = function (eleventyConfig) {
 	// Copies all files in /src/static into the site"s output
@@ -33,6 +36,30 @@ module.exports = function (eleventyConfig) {
 		},
 	});
 
+	// Process CSS into one file
+	eleventyConfig.addTemplateFormats("css");
+	eleventyConfig.addExtension("css", {
+		outputFileExtension: "css",
+		compile: async function(_inputContent, inputPath) {
+			let parsed = path.parse(inputPath);
+			if (parsed.name.startsWith("_")) return;
+
+			let targets = browserslistToTargets(browserslist("> 0.2% and not dead"));
+
+			return async () => {
+				let { code } = await bundle({
+					filename: inputPath,
+					minify: true,
+					sourceMap: false,
+					targets,
+				});
+
+				return code
+			};
+		},
+	});
+
+	// Create event collections
 	eleventyConfig.addCollection("futureEvents", (collection) => {
 		const today = new Date();
 		return collection.getFilteredByTags("event").filter((e) => new Date(e.date) > today);

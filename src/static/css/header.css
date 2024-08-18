@@ -1,0 +1,37 @@
+header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 100%;
+	padding: 1rem 10rem;
+	margin: 0;
+}
+
+header .logo {
+	width: 25%;
+}
+
+header .logo a {
+	max-width: fit-content;
+	display: block;
+}
+
+header img {
+	height: 5rem;
+	width: auto;
+}
+
+header nav {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 75%;
+	justify-content: end;
+	gap: 0 2.5em;
+}
+
+header nav a {
+	font-size: 1.25em;
+	display: block;
+	text-decoration: none;
+}

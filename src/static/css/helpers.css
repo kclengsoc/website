@@ -1,0 +1,69 @@
+/* Helper generic classes (eg. sizing, alignment, fonts) */
+.gray {
+	color: var(--light-text-color);
+}
+
+.serif {
+	font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+}
+
+.sans-serif {
+	font-family:
+		"Karla",
+		system-ui,
+		-apple-system,
+		BlinkMacSystemFont,
+		"Segoe UI",
+		Roboto,
+		Oxygen,
+		Ubuntu,
+		Cantarell,
+		"Open Sans",
+		"Helvetica Neue",
+		sans-serif;
+}
+
+.center {
+	text-align: center;
+}
+
+.left {
+	text-align: left;
+}
+
+.right {
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	text-align: right;
+}
+
+.emphasis {
+	font-size: 4.5rem;
+	margin-bottom: 1rem;
+}
+
+.large {
+	font-size: 2rem;
+}
+
+.medium {
+	font-size: 1.25rem;
+}
+
+.regular {
+	font-size: 1rem;
+}
+
+.fill {
+	min-height: 100vh;
+}
+
+.no-underline {
+	text-decoration: none;
+}
+
+.reading-width {
+	width: 65%;
+	margin: 0 auto;
+}
