@@ -1,0 +1,22 @@
+---
+layout: default
+title: Newsletter
+---
+
+<div class="reading-width main">
+	<h1>Newsletter</h1>
+	<p>We put out a newsletter once a month to keep our members updated. You can <a href="/newsletter">subscribe to the
+			newsletter</a>, or read it on the website!</p>
+
+	<br />
+	<hr />
+	<br />
+
+	<div>
+		{% for article in collections.newsletter | reversed %}
+		{% if article.data.published == true %}
+		<a href="{{ article.url }}">Issue {{ forloop.index }} ({{ article.date | date: "%Y %B %d%q" }})</a>
+		{% endif %}
+		{% endfor %}
+	</div>
+</div>

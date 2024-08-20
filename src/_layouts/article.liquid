@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<style>
+	img {
+		max-height: 25em;
+		max-width: auto;
+		margin: auto;
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+	}
+</style>
+
+<div class="reading-width main">
+	<h1>Newsletter {{ date | date: "%Y-%m-%d" }}</h1>
+
+	<br />
+	<hr />
+	<br />
+
+	{{ content }}
+</div>
