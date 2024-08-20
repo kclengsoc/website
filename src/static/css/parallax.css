@@ -1,52 +1,56 @@
-/* Implementation by https://keithclark.co.uk/articles/pure-css-parallax-websites/ */
-.parallax {
-	perspective: 1px; /* Distance between z=0 plane, and the user */
-	height: 100vh;
-	overflow-x: hidden;
-	overflow-y: auto;
-	scroll-behavior: smooth;
-}
-.parallax__layer {
-	background-color: var(--background-color);
-	/* min-height: 100%; */
-	/* height: fit-content; */
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	display: inline-flex;
-	align-items: center;
-}
-.parallax__layer--base {
-	transform: translateZ(0);
-}
-.parallax__layer--back {
-	transform: translateZ(-1px) scale(2);
-}
-.parallax__layer--deep {
-	transform: translateZ(-2px) scale(3);
-}
-.parallax__layer--far {
-	transform: translateZ(-3px) scale(4);
-}
-.parallax__group {
-	position: relative;
-	min-height: fit-content;
-	height: 100vh;
-	transform-style: preserve-3d;
-	/* Uncomment the line below to visualise layers to help debug */
-	/* transform: translate3d(700px, 0, -800px) rotateY(30deg); */
-}
+@supports ((perspective: 1px) and (not (-webkit-overflow-scrolling: touch))) {
+	/* Implementation by https://keithclark.co.uk/articles/pure-css-parallax-websites/ */
+	.parallax {
+		perspective: 1px; /* Distance between z=0 plane, and the user */
+		height: 100vh;
+		overflow-x: hidden;
+		overflow-y: visible;
+		scroll-behavior: smooth;
+		perspective-origin-x: 100%; /* WebKit fix */
+	}
+	.parallax__layer {
+		background-color: var(--background-color);
+		/* min-height: 100%; */
+		/* height: fit-content; */
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: inline-flex;
+		align-items: center;
+		transform-origin-x: 100%; /* Only for WebKit! */
+	}
+	.parallax__layer--base {
+		transform: translateZ(0);
+	}
+	.parallax__layer--back {
+		transform: translateZ(-1px) scale(2);
+	}
+	.parallax__layer--deep {
+		transform: translateZ(-2px) scale(3);
+	}
+	.parallax__layer--far {
+		transform: translateZ(-3px) scale(4);
+	}
+	.parallax__group {
+		position: relative;
+		min-height: fit-content;
+		height: 100vh;
+		transform-style: preserve-3d;
+		/* Uncomment the line below to visualise layers to help debug */
+		/* transform: translate3d(700px, 0, -800px) rotateY(30deg); */
+	}
 
-.parallax__group--large {
-	position: relative;
-	height: 150vh;
-	transform-style: preserve-3d;
-}
+	.parallax__group--large {
+		position: relative;
+		height: 150vh;
+		transform-style: preserve-3d;
+	}
 
-.parallax__group--small {
-	position: relative;
-	height: 50vh;
-	transform-style: preserve-3d;
+	.parallax__group--small {
+		position: relative;
+		height: 50vh;
+		transform-style: preserve-3d;
+	}
 }
