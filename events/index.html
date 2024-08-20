@@ -54,7 +54,34 @@
 
 	<main>
 		
-<div class="reading-width">
+<script>
+	function showModal(modalString) {
+		const overlayEl = document.getElementById("overlay")
+		overlayEl.classList.remove('hidden');
+
+		const modalEl = document.getElementById(modalString);
+		modalEl.classList.remove('hidden');
+	}
+
+	function closeModal(modalString) {
+		const modalEl = document.getElementById(modalString);
+		modalEl.classList.add('hidden');
+
+		const overlayEl = document.getElementById("overlay")
+		overlayEl.classList.add('hidden');
+	}
+
+	function closeAllModals() {
+		const overlayEl = document.getElementById("overlay")
+		overlayEl.classList.add('hidden');
+
+		const modals = document.querySelectorAll(".modal");
+		modals.forEach((el) => el.classList.add("hidden"));
+	}
+</script>
+
+<div class="reading-width main">
+	<br />
 	<h1>Events</h1>
 	<p>We host a variety of events throughout the year, ranging from pub socials, to CAD workshops, to external speeches
 		from industry professionals.</p>
@@ -62,20 +89,29 @@
 	<div>
 		
 		
-		<div class="eventItem">
-			<h3><a href="/events/welcome-fair/">Welcome Fair</a></h3>
+		<div class="eventItem" id="welcome-fair">
+			
+			<h3><a class="open" href="#modal-welcome-fair"
+					onclick="showModal('modal-welcome-fair')">Welcome Fair</a>
+			</h3>
 			<p class="gray">Thursday, 19 September 2024</p>
 			<p>Pop by our booth and <a class="no-underline" href="/events/welcome-fair/">[...]</a>
 		</div>
 		
-		<div class="eventItem">
-			<h3><a href="/events/meet-and-greet/">Meet and Greet</a></h3>
+		<div class="eventItem" id="meet-and-greet">
+			
+			<h3><a class="open" href="#modal-meet-and-greet"
+					onclick="showModal('modal-meet-and-greet')">Meet and Greet</a>
+			</h3>
 			<p class="gray">Friday, 27 September 2024</p>
 			<p>Come and meet the committee, <a class="no-underline" href="/events/meet-and-greet/">[...]</a>
 		</div>
 		
-		<div class="eventItem">
-			<h3><a href="/events/another-event/">Halloween Party</a></h3>
+		<div class="eventItem" id="halloween-party">
+			
+			<h3><a class="open" href="#modal-halloween-party"
+					onclick="showModal('modal-halloween-party')">Halloween Party</a>
+			</h3>
 			<p class="gray">Thursday, 31 October 2024</p>
 			<p>Come and carve out some <a class="no-underline" href="/events/another-event/">[...]</a>
 		</div>
@@ -90,16 +126,98 @@
 	<div>
 		
 		
-		<div class="eventItem">
-			<h3><a href="/events/old-event/">Last Year's Xmas Party</a></h3>
+		<div class="eventItem" id="last-years-xmas-party">
+			<h3><a class="open" href="#modal-last-years-xmas-party"
+					onclick="showModal('modal-last-years-xmas-party')">Last Year's Xmas Party</a></h3>
 			<p class="gray">Monday, 25 December 2023</p>
 			<p>Let's 3D-print a Christmas <a class="no-underline" href="/events/old-event/">[...]</a>
 		</div>
 	</div>
 	
 </div>
+</div>
 
-		</main>
+
+<div class="modal hidden fade-in" id="modal-last-years-xmas-party">
+	<div>
+		<a class="close" href="#last-years-xmas-party"
+			onclick="closeModal('modal-last-years-xmas-party')">x</a>
+		<div class="">
+			<h2>Last Year's Xmas Party</h2>
+			<p class="medium"></p>
+			<p class="gray medium">2023 December 25th</p>
+
+			<br />
+			<hr />
+			<br />
+
+			<p>Let's 3D-print a Christmas tree!</p>
+
+		</div>
+	</div>
+</div>
+
+<div class="modal hidden fade-in" id="modal-welcome-fair">
+	<div>
+		<a class="close" href="#welcome-fair"
+			onclick="closeModal('modal-welcome-fair')">x</a>
+		<div class="">
+			<h2>Welcome Fair</h2>
+			<p class="medium">Old Billingsgate (EC3R 6DX)</p>
+			<p class="gray medium">2024 September 19th</p>
+
+			<br />
+			<hr />
+			<br />
+
+			<p>Pop by our booth and say hello! Maybe there'll even be a special gift for you...</p>
+
+		</div>
+	</div>
+</div>
+
+<div class="modal hidden fade-in" id="modal-meet-and-greet">
+	<div>
+		<a class="close" href="#meet-and-greet"
+			onclick="closeModal('modal-meet-and-greet')">x</a>
+		<div class="">
+			<h2>Meet and Greet</h2>
+			<p class="medium"></p>
+			<p class="gray medium">2024 September 27th</p>
+
+			<br />
+			<hr />
+			<br />
+
+			<p>Come and meet the committee, and other members of the society.</p>
+
+		</div>
+	</div>
+</div>
+
+<div class="modal hidden fade-in" id="modal-halloween-party">
+	<div>
+		<a class="close" href="#halloween-party"
+			onclick="closeModal('modal-halloween-party')">x</a>
+		<div class="">
+			<h2>Halloween Party</h2>
+			<p class="medium"></p>
+			<p class="gray medium">2024 October 31st</p>
+
+			<br />
+			<hr />
+			<br />
+
+			<p>Come and carve out some pumpkins with laser cutters! (pending risk assessment and safety review)</p>
+
+		</div>
+	</div>
+</div>
+
+
+<div id="overlay" class="hidden" onclick="closeAllModals()"></div>
+
+	</main>
 	<footer class="center">
 	<p>Copyright &copy;
 		<script>document.write(new Date().getFullYear())</script>
