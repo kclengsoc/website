@@ -33,14 +33,17 @@
 	<link rel="manifest" href="/static/site.webmanifest" />
 
 	<link rel="stylesheet" href="/static/css/site.css" />
+	<style>
+		body, html {
+			height: 100%;
+			transform: translateZ(0);
+		}
+	</style>
 </head>
 
 <body>
 	<div class="parallax full-width">
 	<style>
-		body {
-			overflow: hidden;
-		}
 		header {
 			z-index: 2;
 			position: relative;
@@ -69,7 +72,7 @@
 		</div>
 	</div>
 
-	<div class="parallax__group bg-secondary" style="z-index:1;">
+	<div class="parallax__group parallax__layer--base bg-secondary" style="z-index:1;">
 		<div class="parallax__layer parallax__layer--base">
 			<div class="reading-width">
 				<p class="large">We are the oldest collegiate society of
