@@ -73,9 +73,13 @@ a:hover > svg {
 }
 
 main {
-	/* width: 80%; */
+	width: 80%;
 	line-height: 1.5;
 	margin: 0 auto;
+}
+
+.not-found {
+	min-height: 80vh;
 }
 
 /* .home {
