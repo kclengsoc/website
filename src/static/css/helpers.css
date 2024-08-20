@@ -23,6 +23,10 @@
 		sans-serif;
 }
 
+.hidden {
+	display: none !important;
+}
+
 .center {
 	text-align: center;
 }

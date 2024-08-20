@@ -4,5 +4,7 @@
 @import "header.css";
 @import "footer.css";
 @import "main.css";
+@import "animations.css";
+@import "events.css";
 @import "parallax.css";
 @import "mobile.css"; /* last imported to take precedence */

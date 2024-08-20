@@ -3,7 +3,34 @@ layout: default
 title: Events
 ---
 
-<div class="reading-width">
+<script>
+	function showModal(modalString) {
+		const overlayEl = document.getElementById("overlay")
+		overlayEl.classList.remove('hidden');
+
+		const modalEl = document.getElementById(modalString);
+		modalEl.classList.remove('hidden');
+	}
+
+	function closeModal(modalString) {
+		const modalEl = document.getElementById(modalString);
+		modalEl.classList.add('hidden');
+
+		const overlayEl = document.getElementById("overlay")
+		overlayEl.classList.add('hidden');
+	}
+
+	function closeAllModals() {
+		const overlayEl = document.getElementById("overlay")
+		overlayEl.classList.add('hidden');
+
+		const modals = document.querySelectorAll(".modal");
+		modals.forEach((el) => el.classList.add("hidden"));
+	}
+</script>
+
+<div class="reading-width main">
+	<br />
 	<h1>Events</h1>
 	<p>We host a variety of events throughout the year, ranging from pub socials, to CAD workshops, to external speeches
 		from industry professionals.</p>
@@ -11,8 +38,11 @@ title: Events
 	<div>
 		{% assign futureEvents = collections.futureEvents | sort: "date" %}
 		{% for eventItem in futureEvents %}
-		<div class="eventItem">
-			<h3><a href="{{ eventItem.url }}">{{ eventItem.data.title }}</a></h3>
+		<div class="eventItem" id="{{ eventItem.data.title | slugify }}">
+			{% assign theDate = eventItem.date | date: "%Y %B %d%q" %}
+			<h3><a class="open" href="#modal-{{ eventItem.data.title | slugify }}"
+					onclick="showModal('modal-{{ eventItem.data.title | slugify }}')">{{ eventItem.data.title }}</a>
+			</h3>
 			<p class="gray">{{ eventItem.date | date: "%A, %d %B %Y" }}</p>
 			{{ eventItem.content | truncatewords: 5, ' <a class="no-underline" href="' | append: eventItem.url | append: '">[...]</a>' }}
 		</div>
@@ -27,11 +57,35 @@ title: Events
 	<div>
 		{% assign pastEvents = collections.pastEvents | sort: "date" %}
 		{% for eventItem in pastEvents reversed %}
-		<div class="eventItem">
-			<h3><a href="{{ eventItem.url }}">{{ eventItem.data.title }}</a></h3>
+		<div class="eventItem" id="{{ eventItem.data.title | slugify }}">
+			<h3><a class="open" href="#modal-{{ eventItem.data.title | slugify }}"
+					onclick="showModal('modal-{{ eventItem.data.title | slugify }}')">{{ eventItem.data.title }}</a></h3>
 			<p class="gray">{{ eventItem.date | date: "%A, %d %B %Y" }}</p>
 			{{ eventItem.content | truncatewords: 4, ' <a class="no-underline" href="' | append: eventItem.url | append: '">[...]</a>' }}
 		</div>
 	</div>
 	{% endfor %}
 </div>
+</div>
+
+{% for eventItem in collections.event %}
+<div class="modal hidden fade-in" id="modal-{{ eventItem.data.title | slugify }}">
+	<div>
+		<a class="close" href="#{{ eventItem.data.title | slugify }}"
+			onclick="closeModal('modal-{{ eventItem.data.title | slugify }}')">x</a>
+		<div class="">
+			<h2>{{ eventItem.data.title }}</h2>
+			<p class="medium">{{ eventItem.data.location }}</p>
+			<p class="gray medium">{{ eventItem.date | date: "%Y %B %d%q" }}</p>
+
+			<br />
+			<hr />
+			<br />
+
+			{{ eventItem.content }}
+		</div>
+	</div>
+</div>
+{% endfor %}
+
+<div id="overlay" class="hidden" onclick="closeAllModals()"></div>

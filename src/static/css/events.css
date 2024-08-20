@@ -1,0 +1,59 @@
+.modal {
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 0.4rem;
+	width: 45vw;
+	padding: 3.5rem 1.3rem;
+	min-height: 250px;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: var(--primary-background-color);
+	border: 1px solid var(--light-text-color);
+	border-radius: 15px;
+	animation: fadeIn 0.5s ease-in-out;
+}
+
+#overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(3px);
+	z-index: 1;
+	animation: fadeIn 0.5s ease-in-out;
+}
+
+.close {
+	text-decoration: none;
+}
+.open:hover,
+.close:hover {
+	cursor: pointer;
+}
+
+.hidden {
+	animation: fadeOut 0.5s ease-in-out;
+}
+
+/* Accessibility styling */
+@media (prefers-reduced-motion) {
+	@keyframes fadeOut {
+		0% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+}
