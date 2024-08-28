@@ -1,5 +1,9 @@
 /* Mobile optimisations; 768px is the typical tablet width in portrait mode, 1024px for any laptop */
 @media screen and (max-width: 768px) {
+	html {
+		font-size: 18px;
+	}
+
 	body {
 		max-width: 100%;
 		margin: 0;
@@ -67,6 +71,10 @@
 
 	.modal {
 		width: 85vw;
+	}
+
+	.parallax__group {
+		padding: 2em 1.5em;
 	}
 }
 
