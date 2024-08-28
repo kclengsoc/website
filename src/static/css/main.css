@@ -72,6 +72,15 @@ a:hover > svg {
 	opacity: 0.5;
 }
 
+p {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+code {
+	font-size: 0.85em;
+}
+
 main {
 	width: 80%;
 	min-height: 100vh;
@@ -85,6 +94,12 @@ main {
 
 .not-found {
 	min-height: 80vh;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
 }
 
 /* .home {

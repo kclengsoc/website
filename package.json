@@ -2,6 +2,7 @@
 	"name": "kcl-engineering-society",
 	"version": "1.0.0",
 	"description": "A website for the King's College London Engineering Society",
+	"type": "module",
 	"main": "index.js",
 	"author": "Thomas <hi@thomasng.me>",
 	"license": "MIT",
@@ -15,5 +16,10 @@
 	"scripts": {
 		"serve": "eleventy --serve",
 		"build": "eleventy"
+	},
+	"dependencies": {
+		"@notionhq/client": "^2.2.15",
+		"dotenv": "^16.4.5",
+		"notion-to-md": "^3.1.1"
 	}
 }
