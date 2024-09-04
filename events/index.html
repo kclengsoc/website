@@ -33,13 +33,14 @@
 	<link rel="manifest" href="/static/site.webmanifest" />
 
 	<link rel="stylesheet" href="/static/css/site.css" />
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
 	<header>
 	<div class="logo">
 		<a href="/" >
-			<img src="/static/img/kcles-logo-optimised.png" alt="KCL Engineering Society logo" />
+			<img src="/static/img/kcles-new-logo-min.png" alt="KCL Engineering Society logo" />
 		</a>
 	</div>
 
@@ -94,7 +95,7 @@
 					onclick="showModal('modal-welcome-fair')">Welcome Fair</a>
 			</h3>
 			<p class="gray">Thursday, 19 September 2024</p>
-			<p>Pop by our booth and <a class="no-underline" href="/events/welcome-fair/">[...]</a>
+			 Pop by our booth <a class="no-underline" href="">[...]</a>
 		</div>
 		
 		<div class="eventItem" id="meet-and-greet">
@@ -103,7 +104,7 @@
 					onclick="showModal('modal-meet-and-greet')">Meet and Greet</a>
 			</h3>
 			<p class="gray">Friday, 27 September 2024</p>
-			<p>Come and meet the committee, <a class="no-underline" href="/events/meet-and-greet/">[...]</a>
+			 Come and meet the <a class="no-underline" href="">[...]</a>
 		</div>
 		
 		<div class="eventItem" id="halloween-party">
@@ -112,7 +113,7 @@
 					onclick="showModal('modal-halloween-party')">Halloween Party</a>
 			</h3>
 			<p class="gray">Thursday, 31 October 2024</p>
-			<p>Come and carve out some <a class="no-underline" href="/events/another-event/">[...]</a>
+			 Come and carve out <a class="no-underline" href="">[...]</a>
 		</div>
 		
 	</div>
@@ -129,7 +130,7 @@
 			<h3><a class="open" href="#modal-last-years-xmas-party"
 					onclick="showModal('modal-last-years-xmas-party')">Last Year's Xmas Party</a></h3>
 			<p class="gray">Monday, 25 December 2023</p>
-			<p>Let's 3D-print a Christmas <a class="no-underline" href="/events/old-event/">[...]</a>
+			 Let's 3D-print a <a class="no-underline" href="">[...]</a>
 		</div>
 	</div>
 	
@@ -137,39 +138,43 @@
 </div>
 
 
+<div class="modal hidden fade-in" id="modal-halloween-party">
+	<div>
+		<a class="close" href="#halloween-party"
+			onclick="closeModal('modal-halloween-party')">x</a>
+		<div class="">
+			<h2>Halloween Party</h2>
+			<p class="medium"></p>
+			<p class="gray medium">2024 October 31st</p>
+
+			<br />
+			<hr />
+			<br />
+
+			
+Come and carve out some pumpkins with laser cutters! (pending risk assessment and safety review)
+
+
+		</div>
+	</div>
+</div>
+
 <div class="modal hidden fade-in" id="modal-last-years-xmas-party">
 	<div>
 		<a class="close" href="#last-years-xmas-party"
 			onclick="closeModal('modal-last-years-xmas-party')">x</a>
 		<div class="">
 			<h2>Last Year's Xmas Party</h2>
-			<p class="medium"></p>
+			<p class="medium">Strand Chapel</p>
 			<p class="gray medium">2023 December 25th</p>
 
 			<br />
 			<hr />
 			<br />
 
-			<p>Let's 3D-print a Christmas tree!</p>
+			
+Let's 3D-print a Christmas tree!
 
-		</div>
-	</div>
-</div>
-
-<div class="modal hidden fade-in" id="modal-welcome-fair">
-	<div>
-		<a class="close" href="#welcome-fair"
-			onclick="closeModal('modal-welcome-fair')">x</a>
-		<div class="">
-			<h2>Welcome Fair</h2>
-			<p class="medium">Old Billingsgate (EC3R 6DX)</p>
-			<p class="gray medium">2024 September 19th</p>
-
-			<br />
-			<hr />
-			<br />
-
-			<p>Pop by our booth and say hello! Maybe there'll even be a special gift for you...</p>
 
 		</div>
 	</div>
@@ -188,26 +193,30 @@
 			<hr />
 			<br />
 
-			<p>Come and meet the committee, and other members of the society.</p>
+			
+Come and meet the committee, and other members of the society.
+
 
 		</div>
 	</div>
 </div>
 
-<div class="modal hidden fade-in" id="modal-halloween-party">
+<div class="modal hidden fade-in" id="modal-welcome-fair">
 	<div>
-		<a class="close" href="#halloween-party"
-			onclick="closeModal('modal-halloween-party')">x</a>
+		<a class="close" href="#welcome-fair"
+			onclick="closeModal('modal-welcome-fair')">x</a>
 		<div class="">
-			<h2>Halloween Party</h2>
-			<p class="medium"></p>
-			<p class="gray medium">2024 October 31st</p>
+			<h2>Welcome Fair</h2>
+			<p class="medium">Old Billingsgate (EC3R 6DX)</p>
+			<p class="gray medium">2024 September 19th</p>
 
 			<br />
 			<hr />
 			<br />
 
-			<p>Come and carve out some pumpkins with laser cutters! (pending risk assessment and safety review)</p>
+			
+Pop by our booth and say hello! Maybe there'll even be a special gift for you…
+
 
 		</div>
 	</div>

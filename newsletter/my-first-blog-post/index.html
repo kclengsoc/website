@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Surprised this isn't Squarespace or Wix, eh? -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>KCLES | My First Blog Post</title>
+
+	<!-- SEO and meta tags -->
+	<meta name="description"
+		content="The KCL Engineering Society is the oldest collegiate society of its kind. Our society runs workshops, hosts external speakers, and social events." />
+
+	<meta property="og:site_name" content="King's College London Engineering Society" />
+	<meta property="og:title" content="My First Blog Post" />
+	<meta property="og:type" content="website" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:image" content="/static/android-chrome-192x192.png" />
+	<meta name="twitter:image" content="/static/android-chrome-192x192.png" />
+	<meta property="og:image:alt" content="Page image for King's College London Engineering Society" />
+	<meta name="twitter:image:alt" content="Page image for King's College London Engineering Society" />
+
+	<meta name="robots" content="index" />
+	<meta name="robots" content="noai" />
+
+	<!-- Icons and styling -->
+	<link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png" />
+	<link rel="manifest" href="/static/site.webmanifest" />
+
+	<link rel="stylesheet" href="/static/css/site.css" />
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+	<header>
+	<div class="logo">
+		<a href="/" >
+			<img src="/static/img/kcles-new-logo-min.png" alt="KCL Engineering Society logo" />
+		</a>
+	</div>
+
+	<nav>
+		<a href="/">Home</a>
+		<a href="/about">About</a>
+		<a href="/committee">Committee</a>
+		<a href="/events">Events</a>
+		<a href="/newsletter">Newsletter</a>
+	</nav>
+</header>
+
+	<main>
+		<div class="reading-width main">
+<a href="/newsletter">&lt; Back to newsletters</a>
+<br />
+<h1>My First Blog Post</h1>
+<br />
+<hr />
+<br />
+<h1>Heading 1</h1>
+<p>This is me testing the Notion API.</p>
+<p>This is a new paragraph, with a block between this paragraph and the first one. I wonder if the space above will be an empty block?</p>
+<h2>Heading 2, with a code snippet below</h2>
+<pre><code class="language-javascript">// Fizz buzz for numbers up to 100
+var count = 1;
+while (count &lt;= 100) {
+	var toPrint = &quot;&quot;;
+
+	if (count % 3 == 0) {
+		toPrint += &quot;fizz&quot;;
+	}
+
+	if (count % 5 == 0) {
+		toPrint += &quot;buzz&quot;;
+	}
+
+	if (toPrint.length == 0) {
+		toPrint = count;
+	}
+
+	console.log(toPrint);
+	count += 1;
+}
+
+</code></pre>
+<h3>Heading 3, with inline markdown</h3>
+<p>What if we <em>italicise</em> or <strong>bold</strong> some text? <s>Strikethrough</s>? <u>Underline</u>?</p>
+<p>Here’s a LaTeX formula inline ($e=mc^2$), and the equations of motion for a pendulum in a long TeX block:</p>
+<p>$$
+F=ma \newline
+F=-mgsin\theta=ma \newline
+a=-gsin\theta \newline
+s=l\theta \newline
+v=\frac{ds}{dt}=l\frac{d\theta}{dt} \newline
+a=\frac{d^2s}{dt^2}=l\frac{d^2\theta}{dt^2}
+$$</p>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/52f57195-50c0-4179-a450-b30465735b1f/f69f5ed7-7b45-483f-866b-d1f951efe219/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20240904%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20240904T190810Z&amp;X-Amz-Expires=3600&amp;X-Amz-Signature=9d7bddc9b5d1f8ec3197ddfd8b0fcf6d6a40f976f21bb2c8633b5068ec9b297f&amp;X-Amz-SignedHeaders=host&amp;x-id=GetObject" alt="And here is a photo, complete with caption!"></p>
+<hr>
+<h1>Heading 1, other items</h1>
+<blockquote>
+<p>This is a quote</p>
+</blockquote>
+<blockquote>
+<p>💡 This is a callout</p>
+</blockquote>
+<ul>
+<li>Bullet</li>
+<li>lists</li>
+</ul>
+<ol>
+<li>Numbered</li>
+<li>lists</li>
+</ol>
+<ul>
+<li>[ ] To do</li>
+<li>[ ] list</li>
+</ul>
+<details>
+<summary>Toggle</summary>
+<p>Content under toggle</p>
+</details>
+<p>And finally, what if we link to another page?</p>
+<p><a href="ea69e3bc-5984-4593-94b1-c152ceefbca7">link_to_page</a></p>
+</div>
+
+	</main>
+	<footer class="center">
+	<p>Copyright &copy;
+		<script>document.write(new Date().getFullYear())</script>
+		<noscript>2024</noscript>
+		King's College London Engineering Society</p>
+</footer>
+
+</body>
+
+</html>
