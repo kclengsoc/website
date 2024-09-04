@@ -5,10 +5,12 @@ pagination:
     size: 1
     alias: post
 permalink: "newsletter/{{ post.title | slugify }}/"
+eleventyComputed:
+  title: "{{ post.title }}"
 ---
 
 <div class="reading-width main">
-<h1>Newsletter {{ post.date | date: "%Y-%m-%d" }}</h1>
+<h1>{{ post.title }}</h1>
 
 <br />
 <hr />

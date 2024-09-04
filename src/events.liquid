@@ -35,12 +35,12 @@ title: Events
 		from industry professionals.</p>
 
 	<div>
-		{% assign futureEvents = collections.futureEvents | sort: "date" %}
+		{% assign futureEvents = event | futureEvents | sort: "date" %}
 		{% for eventItem in futureEvents %}
-		<div class="eventItem" id="{{ eventItem.data.title | slugify }}">
+		<div class="eventItem" id="{{ eventItem.title | slugify }}">
 			{% assign theDate = eventItem.date | date: "%Y %B %d%q" %}
-			<h3><a class="open" href="#modal-{{ eventItem.data.title | slugify }}"
-					onclick="showModal('modal-{{ eventItem.data.title | slugify }}')">{{ eventItem.data.title }}</a>
+			<h3><a class="open" href="#modal-{{ eventItem.title | slugify }}"
+					onclick="showModal('modal-{{ eventItem.title | slugify }}')">{{ eventItem.title }}</a>
 			</h3>
 			<p class="gray">{{ eventItem.date | date: "%A, %d %B %Y" }}</p>
 			{{ eventItem.content | truncatewords: 5, ' <a class="no-underline" href="' | append: eventItem.url | append: '">[...]</a>' }}
@@ -54,11 +54,11 @@ title: Events
 
 	<p>Curious about what we've done in the past?</p>
 	<div>
-		{% assign pastEvents = collections.pastEvents | sort: "date" %}
+		{% assign pastEvents = event | pastEvents | sort: "date" %}
 		{% for eventItem in pastEvents reversed %}
-		<div class="eventItem" id="{{ eventItem.data.title | slugify }}">
-			<h3><a class="open" href="#modal-{{ eventItem.data.title | slugify }}"
-					onclick="showModal('modal-{{ eventItem.data.title | slugify }}')">{{ eventItem.data.title }}</a></h3>
+		<div class="eventItem" id="{{ eventItem.title | slugify }}">
+			<h3><a class="open" href="#modal-{{ eventItem.title | slugify }}"
+					onclick="showModal('modal-{{ eventItem.title | slugify }}')">{{ eventItem.title }}</a></h3>
 			<p class="gray">{{ eventItem.date | date: "%A, %d %B %Y" }}</p>
 			{{ eventItem.content | truncatewords: 4, ' <a class="no-underline" href="' | append: eventItem.url | append: '">[...]</a>' }}
 		</div>
@@ -67,14 +67,14 @@ title: Events
 </div>
 </div>
 
-{% for eventItem in collections.event %}
-<div class="modal hidden fade-in" id="modal-{{ eventItem.data.title | slugify }}">
+{% for eventItem in event %}
+<div class="modal hidden fade-in" id="modal-{{ eventItem.title | slugify }}">
 	<div>
-		<a class="close" href="#{{ eventItem.data.title | slugify }}"
-			onclick="closeModal('modal-{{ eventItem.data.title | slugify }}')">x</a>
+		<a class="close" href="#{{ eventItem.title | slugify }}"
+			onclick="closeModal('modal-{{ eventItem.title | slugify }}')">x</a>
 		<div class="">
-			<h2>{{ eventItem.data.title }}</h2>
-			<p class="medium">{{ eventItem.data.location }}</p>
+			<h2>{{ eventItem.title }}</h2>
+			<p class="medium">{{ eventItem.location }}</p>
 			<p class="gray medium">{{ eventItem.date | date: "%Y %B %d%q" }}</p>
 
 			<br />

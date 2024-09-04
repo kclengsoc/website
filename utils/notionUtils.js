@@ -60,6 +60,15 @@ export async function fetchDb(databaseId) {
 	return pageObjects;
 }
 
+export async function fetchPageAsMarkdown(pageId) {
+	logger(`Querying Notion for page ID ${pageId}`, "info");
+	const mdBlocks = await n2m.pageToMarkdown(pageId);
+	const mdString = n2m.toMarkdownString(mdBlocks);
+
+	logger(`Fetched page with ID ${pageId}`, "info");
+	return mdString.parent;
+}
+
 async function fetchPost(post) {
 	const mdBlocks = await n2m.pageToMarkdown(post.id);
 	const mdString = n2m.toMarkdownString(mdBlocks);
@@ -67,8 +76,13 @@ async function fetchPost(post) {
 
 	let title;
 
-	if (post.properties["Title"].title != null) {
-		title = post.properties["Title"].title[0]["plain_text"];
+	if (post.properties["Title"].title.length > 0) {
+		let joinedTitle = "";
+		for (const t of post.properties["Title"].title) {
+			joinedTitle += t["plain_text"]
+		}
+
+		title = joinedTitle;
 	} else {
 		title = post.properties["Date"].date.start;
 	}
@@ -80,6 +94,17 @@ async function fetchPost(post) {
 		published: true,
 		content: mdString.parent,
 	};
+
+	if (post.properties["Location"]?.["rich_text"].length > 0) {
+		let joinedLocation = "";
+		for (const l of post.properties["Location"]["rich_text"]) {
+			joinedLocation += l["plain_text"]
+		}
+
+		thePage.location = joinedLocation;
+	} else {
+		thePage.location = null;
+	}
 
 	return thePage;
 }

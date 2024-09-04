@@ -15,7 +15,7 @@ title: Newsletter
 	<div class="list">
 		{% for article in newsletter %}
 		{% if article.published == true %}
-		<a href="/newsletter/{{ article.title | slugify }}">Issue {{ forloop.index }} ({{ article.date | date: "%Y %B %d%q" }})</a>
+		<a href="/newsletter/{{ article.title | slugify }}">Issue {{ forloop.rindex }} ({{ article.date | date: "%Y %B %d%q" }})</a>
 		{% endif %}
 		{% endfor %}
 	</div>
