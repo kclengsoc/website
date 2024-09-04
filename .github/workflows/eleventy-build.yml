@@ -18,6 +18,9 @@ jobs:
 
       - run: npm ci
 
+      - env:
+        - NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+
       - run: npm run build
 
       - name: Deploy
