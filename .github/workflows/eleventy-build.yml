@@ -16,13 +16,13 @@ jobs:
         with:
           node-version: '20.x'
 
-      - run: npm ci
+      - name: Install Node Packages
+        run: npm ci
 
-
-
-      - run: npm run build
+      - name: Build Website
         env:
-          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          NOTION_API_KEY: '${{ secrets.NOTION_API_KEY }}'
+        run: npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
