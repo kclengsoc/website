@@ -10,6 +10,8 @@ eleventyComputed:
 ---
 
 <div class="reading-width main">
+<a href="/newsletter">&lt; Back to newsletters</a>
+<br />
 <h1>{{ post.title }}</h1>
 
 <br />

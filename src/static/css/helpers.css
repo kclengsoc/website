@@ -45,6 +45,7 @@
 .emphasis {
 	font-size: 4.5rem;
 	margin-bottom: 1rem;
+	color: var(--kcles-red);
 }
 
 .large {
@@ -82,4 +83,9 @@
 
 .bg-secondary {
 	background: var(--secondary-background-color);
+}
+
+.bg-dark {
+	background: var(--kcles-red);
+	color: var(--white-text-color);
 }

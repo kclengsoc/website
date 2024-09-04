@@ -5,6 +5,7 @@ header {
 	width: 100%;
 	padding: 1rem 10rem;
 	margin: 0;
+	background-color: var(--kcles-red);
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
 }
@@ -36,4 +37,11 @@ header nav a {
 	font-size: 1.25em;
 	display: block;
 	text-decoration: none;
+	color: var(--white-text-color);
+}
+
+a:hover {
+	transition: 0.175s;
+	color: hsl(42, 87%, 80%);
+	opacity: 0.8;
 }

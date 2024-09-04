@@ -1,5 +1,6 @@
 footer {
-	background-color: var(--secondary-background-color);
+	background-color: var(--kcles-red);
+	color: var(--white-text-color);
 	width: 100%;
 	margin-top: 2em;
 	padding: 2em;

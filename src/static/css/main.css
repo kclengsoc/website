@@ -23,7 +23,9 @@
 	--darker-background-color: #f0f0f0;
 	--text-color: #111;
 	--light-text-color: #666;
+	--white-text-color: #eee;
 	--kcles-yellow: #f2be41;
+	--kcles-red: rgb(83, 2, 1);
 }
 
 html {
