@@ -3,7 +3,6 @@ import path from "path";
 const NOT_FOUND_PATH = "_site/404.html";
 import browserslist from "browserslist";
 import { bundle, browserslistToTargets, composeVisitors } from "lightningcss";
-// import NotionCMS, { Head, Linker, Images } from "@agency-kit/notion-cms";
 
 export default async function (eleventyConfig) {
 	// Copies all files in /src/static into the site"s output
@@ -82,18 +81,6 @@ export default async function (eleventyConfig) {
 				return code
 			};
 		},
-	});
-
-	// Create event collections
-	eleventyConfig.addCollection("futureEvents", (collection) => {
-		const events = collection.getFilteredByTags("event");
-		const today = new Date();
-		return collection.getFilteredByTags("event").filter((e) => new Date(e.date) > today);
-	});
-
-	eleventyConfig.addCollection("pastEvents", (collection) => {
-		const today = new Date();
-		return collection.getFilteredByTags("event").filter((e) => new Date(e.date) < today);
 	});
 
 	return {

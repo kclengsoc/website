@@ -19,13 +19,13 @@
 	/* 3 colour palette here https://coolors.co/111111-f5f5f5-f2be41*/
 	--primary-background-color: #fafafa;
 	/* --primary-background-color: rgb(248, 236, 214); */
-	--secondary-background-color: hsl(42, 87%, 90%);
+	--secondary-background-color: #fceecf;
 	--darker-background-color: #f0f0f0;
 	--text-color: #111;
 	--light-text-color: #666;
 	--white-text-color: #eee;
 	--kcles-yellow: #f2be41;
-	--kcles-red: rgb(83, 2, 1);
+	--kcles-red: #530201;
 }
 
 html {
