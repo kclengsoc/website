@@ -73,7 +73,7 @@ title: Home
 			{% assign events = event | futureEvents | sort: "date" %}
 			{% for eventItem in events | limit: 3 %}
 			<div class="eventItem">
-				<h2><a href="{{ eventItem.url }}">{{ eventItem.title }}</a></h2>
+				<h2><a href="/events/{{ eventItem.title | slugify }}">{{ eventItem.title }}</a></h2>
 				<p class="gray">{{ eventItem.date | date: "%A, %d %B %Y" }}</p>
 				{{ eventItem.content }}
 			</div>
