@@ -58,7 +58,9 @@ Open a terminal, navigate to the project, and type in `npm run serve`. Once the 
 <details>
 <summary>I've made a change. How do I deploy the website?</summary>
 
-> TBC depending on where we host the website
+For people working on Notion: The site should periodically rebuild once an hour. Wait until then to see your changes reflect on the website.
+
+For site work: Push a commit to the `main` branch, and it should automatically start a build.
 
 </details>
 
