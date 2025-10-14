@@ -1,8 +1,14 @@
-import { fetchDb } from "../../utils/notionUtils.js";
-
-export default (async () => {
-	const events = await fetchDb("0e93470406374236844c6c3a1722fb85");
-	const sortedEvents = events.sort((a, b) => Date.parse(a.date) > Date.parse(b.date));
-
-	return sortedEvents;
-})();
+export default [
+  {
+    title: "Engineering Boat Party 2025",
+    date: "2025-11-10",
+    location: "River Thames, London",
+    content: "Annual KCL × UCL Boat Party — tickets open soon!"
+  },
+  {
+    title: "Industry Networking Panel",
+    date: "2025-12-02",
+    location: "Bush House, KCL",
+    content: "Hear from engineers from Rolls-Royce and Airbus."
+  }
+];
