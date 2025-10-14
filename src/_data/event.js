@@ -1,14 +1,20 @@
 export default [
   {
-    title: "Engineering Boat Party 2025",
-    date: "2025-11-10",
-    location: "River Thames, London",
-    content: "Annual KCL × UCL Boat Party — tickets open soon!"
+    title: "CAD and 3D printing workshop",
+    date: "15-10-2025",
+    location: "General Classroom, Hodgkin Classroom",
+    content: "Introductory class to CAD and 3D printing using TinkerCAD and Bambu printers."
   },
   {
-    title: "Industry Networking Panel",
-    date: "2025-12-02",
-    location: "Bush House, KCL",
-    content: "Hear from engineers from Rolls-Royce and Airbus."
+    title: "MATLAB Workshop",
+    date: "22-10-2025",
+    location: "To be annonced",
+    content: "Workshop on MATLAB with KCL MATLAB ambassador"
+  },
+  {
+    title: "Cross-society networking event: Grow you ecosySTEM",
+    date: "29-10-2025",
+    location: "Engineering Quad, Rooms Q-126 & Q-1.47, Strand Campus",
+    content: "Join us for a evening of connection, collaboration and activities as KCL STEM societies come together!"
   }
 ];
