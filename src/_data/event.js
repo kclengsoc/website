@@ -14,7 +14,7 @@ export default [
   {
     title: "Cross-society networking event: Grow you ecosySTEM",
     date: "29-10-2025",
-    location: "Engineering Quad, Rooms Q-126 & Q-1.47, Strand Campus",
+    location: "Engineering Quad, Rooms Q-126 & Q-1.47, in Strand Campus",
     content: "Join us for a evening of connection, collaboration and activities as KCL STEM societies come together!"
   }
 ];
