@@ -1,5 +1,4 @@
 export default `
-## About KCLES
 
 King’s College London has one of the oldest engineering programmes in the UK.  
 The Department of Civil Engineering and Mining was established in 1838, followed by the founding of the King’s College London Engineering Society (KCLES) in 1847.  
