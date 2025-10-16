@@ -1,12 +1,12 @@
 <div>
   <br />
-  <a class="medium" href="/events">< Back to events</a>
+  <a class="medium" href="/events">&lt; Back to events</a>
   <br />
   <br />
   <div class="reading-width">
     <h1>{{ post.title }}</h1>
     <p class="medium">{{ post.location }}</p>
-    <p class="gray medium">{{ post.date | date: "%Y %B %d%q" }}</p>
+    <p class="gray medium">{{ post.date | date: "%Y %B %d" }}</p>
 
     <br />
     <hr />
