@@ -8,6 +8,27 @@ export default [
     images: ["/static/img/frontpage-3.jpeg", "/static/img/frontpage-4.jpeg"]
   },
   {
+    title: "Pitch & Pitchers",
+    date: "2025-10-7",
+    location: "The vault",
+    content: "Event to pitch ideas in a social and calm atmoshpere.",
+    images: ["/static/img/frontpage-5.jpeg", "/static/img/frontpage-6.jpeg", "/static/img/frontpage-7.jpeg"]
+  },
+  {
+    title: "MATLAB Onramp part",
+    date: "2025-10-1",
+    location: "KIN G40",
+    content: "MATLAB Onramp hosted by KCL MATLAB Ambassador.",
+    images: ["/static/img/frontpage-8.jpeg", "/static/img/frontpage-9.jpeg"]
+  },
+  {
+    title: "Meet and Greet",
+    date: "2025-09-27",
+    location: "N/A",
+    content: "Picnic to celebrate start of academic year..",
+    images: ["/static/img/frontpage-10.jpeg"]
+  },
+  {
     title: "MATLAB Workshop",
     date: "2025-10-22",
     location: "To be announced",
