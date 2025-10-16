@@ -56,147 +56,160 @@
 	<main>
 		
 <script>
-	function showModal(modalString) {
-		const overlayEl = document.getElementById("overlay")
-		overlayEl.classList.remove('hidden');
+  function showModal(modalString) {
+    const overlayEl = document.getElementById("overlay")
+    overlayEl.classList.remove('hidden');
 
-		const modalEl = document.getElementById(modalString);
-		modalEl.classList.remove('hidden');
-	}
+    const modalEl = document.getElementById(modalString);
+    modalEl.classList.remove('hidden');
+  }
 
-	function closeModal(modalString) {
-		const modalEl = document.getElementById(modalString);
-		modalEl.classList.add('hidden');
+  function closeModal(modalString) {
+    const modalEl = document.getElementById(modalString);
+    modalEl.classList.add('hidden');
 
-		const overlayEl = document.getElementById("overlay")
-		overlayEl.classList.add('hidden');
-	}
+    const overlayEl = document.getElementById("overlay")
+    overlayEl.classList.add('hidden');
+  }
 
-	function closeAllModals() {
-		const overlayEl = document.getElementById("overlay")
-		overlayEl.classList.add('hidden');
+  function closeAllModals() {
+    const overlayEl = document.getElementById("overlay")
+    overlayEl.classList.add('hidden');
 
-		const modals = document.querySelectorAll(".modal");
-		modals.forEach((el) => el.classList.add("hidden"));
-	}
+    const modals = document.querySelectorAll(".modal");
+    modals.forEach((el) => el.classList.add("hidden"));
+  }
 </script>
 
 <div class="reading-width main">
-	<h1>Events</h1>
-	<p>We host a variety of events throughout the year, ranging from pub socials, to CAD workshops, to external speeches
-		from industry professionals.</p>
+  <h1>Events</h1>
+  <p>We host a variety of events throughout the year, ranging from pub socials, to CAD workshops, to external speeches
+    from industry professionals.</p>
 
-	<div>
-		
-		
-		<div class="eventItem" id="matlab-workshop">
-			
-			<h3><a class="open" href="#modal-matlab-workshop"
-					onclick="showModal('modal-matlab-workshop')">MATLAB Workshop</a>
-			</h3>
-			<p class="gray">Wednesday, 22 October 2025</p>
-			Workshop on MATLAB with KCL <a class="no-underline" href="">[...]</a>
-		</div>
-		
-		<div class="eventItem" id="cross-society-networking-event-grow-your-ecosystem">
-			
-			<h3><a class="open" href="#modal-cross-society-networking-event-grow-your-ecosystem"
-					onclick="showModal('modal-cross-society-networking-event-grow-your-ecosystem')">Cross-society networking event: Grow your ecosySTEM</a>
-			</h3>
-			<p class="gray">Wednesday, 29 October 2025</p>
-			Join us for an evening <a class="no-underline" href="">[...]</a>
-		</div>
-		
-	</div>
+  <div>
+    
+    
+    <div class="eventItem" id="matlab-workshop">
+      
+      <h3>
+        <a class="open" href="#modal-matlab-workshop"
+           onclick="showModal('modal-matlab-workshop')">
+          MATLAB Workshop
+        </a>
+      </h3>
+      <p class="gray">Wednesday, 22 October 2025</p>
+      workshop-on-matlab-with-kcl-a-class-no-underline-href-events-matlab-workshop">[...]</a>
+    </div>
+    
+    <div class="eventItem" id="cross-society-networking-event-grow-your-ecosystem">
+      
+      <h3>
+        <a class="open" href="#modal-cross-society-networking-event-grow-your-ecosystem"
+           onclick="showModal('modal-cross-society-networking-event-grow-your-ecosystem')">
+          Cross-society networking event: Grow your ecosySTEM
+        </a>
+      </h3>
+      <p class="gray">Wednesday, 29 October 2025</p>
+      join-us-for-an-evening-a-class-no-underline-href-events-cross-society-networking-event-grow-your-ecosystem">[...]</a>
+    </div>
+    
+  </div>
 
-	<br />
-	<hr />
-	<br />
+  <br />
+  <hr />
+  <br />
 
-	<p>Curious about what we've done in the past?</p>
-	<div>
-		
-		
-		<div class="eventItem" id="cad-and-3d-printing-workshop">
-			<h3><a class="open" href="#modal-cad-and-3d-printing-workshop"
-					onclick="showModal('modal-cad-and-3d-printing-workshop')">CAD and 3D printing workshop</a></h3>
-			<p class="gray">Wednesday, 15 October 2025</p>
-			Introductory class to CAD <a class="no-underline" href="">[...]</a>
-		</div>
-		
-	</div>
+  <p>Curious about what we've done in the past?</p>
+  <div>
+    
+    
+    <div class="eventItem" id="cad-and-3d-printing-workshop">
+      <h3>
+        <a class="open" href="#modal-cad-and-3d-printing-workshop"
+           onclick="showModal('modal-cad-and-3d-printing-workshop')">
+          CAD and 3D printing workshop
+        </a>
+      </h3>
+      <p class="gray">Wednesday, 15 October 2025</p>
+      introductory-class-to-cad-and-a-class-no-underline-href-events-cad-and-3d-printing-workshop">[...]</a>
+    </div>
+    
+  </div>
 </div>
 
 
 <div class="modal hidden fade-in" id="modal-cad-and-3d-printing-workshop">
-	<div>
-		<a class="close" href="#cad-and-3d-printing-workshop"
-			onclick="closeModal('modal-cad-and-3d-printing-workshop')">x</a>
-		<div class="">
-			<h2>CAD and 3D printing workshop</h2>
-			<p class="medium">General Classroom, Hodgkin Classroom</p>
-			<p class="gray medium">2025 October 15</p>
+  <div>
+    <a class="close" href="#cad-and-3d-printing-workshop"
+       onclick="closeModal('modal-cad-and-3d-printing-workshop')">x</a>
+    <div class="">
+      <h2>CAD and 3D printing workshop</h2>
+      <p class="medium">General Classroom, Hodgkin Classroom</p>
+      <p class="gray medium">2025 October 15th</p>
 
-			<br />
-			<hr />
-			<br />
+      <br />
+      <hr />
+      <br />
 
-			Introductory class to CAD and 3D printing using TinkerCAD and Bambu printers.
+      Introductory class to CAD and 3D printing using TinkerCAD and Bambu printers.
 
-			
-				<div class="event-images">
-					<h4>Pictures of Event:</h4>
-					<div class="image-gallery">
-						
-							<img src="/static/img/frontpage-3.jpeg" alt="CAD and 3D printing workshop photo" />
-						
-							<img src="/static/img/frontpage-4.jpeg" alt="CAD and 3D printing workshop photo" />
-						
-					</div>
-				</div>
-			
-		</div>
-	</div>
+      
+      <div class="event-images">
+        <h4>Pictures of Event:</h4>
+        <div class="image-gallery">
+          
+            <img src="/static/img/frontpage-3.jpeg" alt="CAD and 3D printing workshop photo" />
+          
+            <img src="/static/img/frontpage-4.jpeg" alt="CAD and 3D printing workshop photo" />
+          
+        </div>
+      </div>
+      
+
+    </div>
+  </div>
 </div>
 
 <div class="modal hidden fade-in" id="modal-matlab-workshop">
-	<div>
-		<a class="close" href="#matlab-workshop"
-			onclick="closeModal('modal-matlab-workshop')">x</a>
-		<div class="">
-			<h2>MATLAB Workshop</h2>
-			<p class="medium">To be announced</p>
-			<p class="gray medium">2025 October 22</p>
+  <div>
+    <a class="close" href="#matlab-workshop"
+       onclick="closeModal('modal-matlab-workshop')">x</a>
+    <div class="">
+      <h2>MATLAB Workshop</h2>
+      <p class="medium">To be announced</p>
+      <p class="gray medium">2025 October 22nd</p>
 
-			<br />
-			<hr />
-			<br />
+      <br />
+      <hr />
+      <br />
 
-			Workshop on MATLAB with KCL MATLAB ambassador
+      Workshop on MATLAB with KCL MATLAB ambassador
 
-			
-		</div>
-	</div>
+      
+
+    </div>
+  </div>
 </div>
 
 <div class="modal hidden fade-in" id="modal-cross-society-networking-event-grow-your-ecosystem">
-	<div>
-		<a class="close" href="#cross-society-networking-event-grow-your-ecosystem"
-			onclick="closeModal('modal-cross-society-networking-event-grow-your-ecosystem')">x</a>
-		<div class="">
-			<h2>Cross-society networking event: Grow your ecosySTEM</h2>
-			<p class="medium">Engineering Quad, Rooms Q-126 & Q-1.47, in Strand Campus</p>
-			<p class="gray medium">2025 October 29</p>
+  <div>
+    <a class="close" href="#cross-society-networking-event-grow-your-ecosystem"
+       onclick="closeModal('modal-cross-society-networking-event-grow-your-ecosystem')">x</a>
+    <div class="">
+      <h2>Cross-society networking event: Grow your ecosySTEM</h2>
+      <p class="medium">Engineering Quad, Rooms Q-126 & Q-1.47, in Strand Campus</p>
+      <p class="gray medium">2025 October 29th</p>
 
-			<br />
-			<hr />
-			<br />
+      <br />
+      <hr />
+      <br />
 
-			Join us for an evening of connection, collaboration and activities as KCL STEM societies come together!
+      Join us for an evening of connection, collaboration and activities as KCL STEM societies come together!
 
-			
-		</div>
-	</div>
+      
+
+    </div>
+  </div>
 </div>
 
 
