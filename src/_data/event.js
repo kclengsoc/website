@@ -4,6 +4,7 @@ export default [
     date: "2025-10-15",
     location: "General Classroom, Hodgkin Classroom",
     content: "Introductory class to CAD and 3D printing using TinkerCAD and Bambu printers."
+    images: ["/img/frontpage-3.jpeg", "/img/frontpage-4.jpeg"]
   },
   {
     title: "MATLAB Workshop",
