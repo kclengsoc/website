@@ -38,6 +38,19 @@
 			height: 100%;
 			transform: translateZ(0);
 		}
+
+		/* Hover effect for homepage left/right images only */
+		.left-img img,
+		.right-img img {
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+			cursor: pointer;
+		}
+
+		.left-img img:hover,
+		.right-img img:hover {
+			transform: scale(1.05); /* slightly bigger */
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* subtle shadow */
+		}
 	</style>
 </head>
 
