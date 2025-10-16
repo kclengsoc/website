@@ -17,6 +17,5 @@ module.exports = [
     date: "2025-10-29",
     location: "Engineering Quad, Rooms Q-126 & Q-1.47, in Strand Campus",
     content: "Join us for an evening of connection, collaboration and activities as KCL STEM societies come together!",
-    images:
   }
 ];
