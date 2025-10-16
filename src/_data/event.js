@@ -1,4 +1,4 @@
-module.exports = [
+export default [
   {
     title: "CAD and 3D printing workshop",
     date: "2025-10-15",
