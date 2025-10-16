@@ -1,16 +1,3 @@
----
-layout: 'default.liquid'
-tags:
-    - event
-pagination:
-    data: event
-    size: 1
-    alias: post
-permalink: "events/{{ post.title | slugify }}/"
-eleventyComputed:
-  title: "{{ post.title }}"
----
-
 <div>
  <br />
  <a class="medium" href="/events">< Back to events</a>
@@ -26,5 +13,16 @@ eleventyComputed:
   <br />
 
   {{ post.content }}
- </div>
-</div>
+
+  {% if post.images %}
+    <div class="event-images">
+      <h4>Pictures of Event:</h4>
+      <div class="image-gallery">
+        {% for img in post.images %}
+          <img src="{{ img }}" alt="{{ post.title }} photo" />
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+ </div> <!-- end reading-width -->
+</div> <!-- end outer div -->
