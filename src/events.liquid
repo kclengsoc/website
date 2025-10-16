@@ -62,9 +62,8 @@ title: Events
 			<p class="gray">{{ eventItem.date | date: "%A, %d %B %Y" }}</p>
 			{{ eventItem.content | truncatewords: 4, ' <a class="no-underline" href="' | append: eventItem.url | append: '">[...]</a>' }}
 		</div>
+		{% endfor %}
 	</div>
-	{% endfor %}
-</div>
 </div>
 
 {% for eventItem in event %}
@@ -75,13 +74,24 @@ title: Events
 		<div class="">
 			<h2>{{ eventItem.title }}</h2>
 			<p class="medium">{{ eventItem.location }}</p>
-			<p class="gray medium">{{ eventItem.date | date: "%Y %B %d%q" }}</p>
+			<p class="gray medium">{{ eventItem.date | date: "%Y %B %d" }}</p>
 
 			<br />
 			<hr />
 			<br />
 
 			{{ eventItem.content }}
+
+			{% if eventItem.images %}
+				<div class="event-images">
+					<h4>Pictures of Event:</h4>
+					<div class="image-gallery">
+						{% for img in eventItem.images %}
+							<img src="{{ img }}" alt="{{ eventItem.title }} photo" />
+						{% endfor %}
+					</div>
+				</div>
+			{% endif %}
 		</div>
 	</div>
 </div>
