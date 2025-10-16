@@ -12,7 +12,7 @@ export default [
     date: "2025-10-7",
     location: "The vault",
     content: "Event to pitch ideas in a social and calm atmoshpere.",
-    images: ["/static/img/frontpage-5.jpeg", "/static/img/frontpage-6.jpeg", "/static/img/frontpage-7.jpeg"]
+    images: ["/static/img/frontpage-5.jpeg", "/static/img/frontpage-6.png", "/static/img/frontpage-7.jpeg"]
   },
   {
     title: "MATLAB Onramp part",
