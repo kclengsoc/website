@@ -1,4 +1,4 @@
-// src/_data/events.js
+// src/_data/event.js
 export default [
   {
     title: "CAD and 3D Printing Workshop",
