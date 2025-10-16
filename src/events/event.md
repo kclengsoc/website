@@ -1,15 +1,3 @@
----
-layout: 'default.liquid'
-tags:
-  - event
-pagination:
-  data: event
-  size: 1
-  alias: post
-permalink: "events/{{ post.title | slugify }}/"
-eleventyComputed:
-  title: "{{ post.title }}"
----
 <div>
   <br />
   <a class="medium" href="/events">< Back to events</a>
