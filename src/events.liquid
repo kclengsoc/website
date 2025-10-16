@@ -38,14 +38,12 @@ title: Events
 		{% assign futureEvents = event | futureEvents | sort: "date" %}
 		{% for eventItem in futureEvents %}
 		<div class="eventItem" id="{{ eventItem.title | slugify }}">
-			{% assign theDate = eventItem.date | date: "%Y %B %d%q" %}
 			<h3>
 				<a class="open" href="#modal-{{ eventItem.title | slugify }}"
 					onclick="showModal('modal-{{ eventItem.title | slugify }}')">{{ eventItem.title }}</a>
 			</h3>
 			<p class="gray">{{ eventItem.date | date: "%A, %d %B %Y" }}</p>
-			{{ eventItem.content | truncatewords: 5 }}
-			<a class="no-underline" href="/events/{{ eventItem.title | slugify }}">[...]</a>
+			{{ eventItem.content }}
 		</div>
 		{% endfor %}
 	</div>
@@ -64,8 +62,7 @@ title: Events
 					onclick="showModal('modal-{{ eventItem.title | slugify }}')">{{ eventItem.title }}</a>
 			</h3>
 			<p class="gray">{{ eventItem.date | date: "%A, %d %B %Y" }}</p>
-			{{ eventItem.content | truncatewords: 5 }}
-			<a class="no-underline" href="/events/{{ eventItem.title | slugify }}">[...]</a>
+			{{ eventItem.content }}
 		</div>
 		{% endfor %}
 	</div>
@@ -92,7 +89,7 @@ title: Events
 				<h4>Pictures of Event:</h4>
 				<div class="image-gallery">
 					{% for img in eventItem.images %}
-					<img src="{{ img }}" alt="{{ eventItem.title }} photo" />
+						<img src="{{ img }}" alt="{{ eventItem.title }} photo" />
 					{% endfor %}
 				</div>
 			</div>
