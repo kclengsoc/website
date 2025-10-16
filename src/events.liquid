@@ -4,96 +4,104 @@ title: Events
 ---
 
 <script>
-	function showModal(modalString) {
-		const overlayEl = document.getElementById("overlay")
-		overlayEl.classList.remove('hidden');
+  function showModal(modalString) {
+    const overlayEl = document.getElementById("overlay")
+    overlayEl.classList.remove('hidden');
 
-		const modalEl = document.getElementById(modalString);
-		modalEl.classList.remove('hidden');
-	}
+    const modalEl = document.getElementById(modalString);
+    modalEl.classList.remove('hidden');
+  }
 
-	function closeModal(modalString) {
-		const modalEl = document.getElementById(modalString);
-		modalEl.classList.add('hidden');
+  function closeModal(modalString) {
+    const modalEl = document.getElementById(modalString);
+    modalEl.classList.add('hidden');
 
-		const overlayEl = document.getElementById("overlay")
-		overlayEl.classList.add('hidden');
-	}
+    const overlayEl = document.getElementById("overlay")
+    overlayEl.classList.add('hidden');
+  }
 
-	function closeAllModals() {
-		const overlayEl = document.getElementById("overlay")
-		overlayEl.classList.add('hidden');
+  function closeAllModals() {
+    const overlayEl = document.getElementById("overlay")
+    overlayEl.classList.add('hidden');
 
-		const modals = document.querySelectorAll(".modal");
-		modals.forEach((el) => el.classList.add("hidden"));
-	}
+    const modals = document.querySelectorAll(".modal");
+    modals.forEach((el) => el.classList.add("hidden"));
+  }
 </script>
 
 <div class="reading-width main">
-	<h1>Events</h1>
-	<p>We host a variety of events throughout the year, ranging from pub socials, to CAD workshops, to external speeches
-		from industry professionals.</p>
+  <h1>Events</h1>
+  <p>We host a variety of events throughout the year, ranging from pub socials, to CAD workshops, to external speeches
+    from industry professionals.</p>
 
-	<div>
-		{% assign futureEvents = event | futureEvents | sort: "date" %}
-		{% for eventItem in futureEvents %}
-		<div class="eventItem" id="{{ eventItem.title | slugify }}">
-			{% assign theDate = eventItem.date | date: "%Y %B %d%q" %}
-			<h3><a class="open" href="#modal-{{ eventItem.title | slugify }}"
-					onclick="showModal('modal-{{ eventItem.title | slugify }}')">{{ eventItem.title }}</a>
-			</h3>
-			<p class="gray">{{ eventItem.date | date: "%A, %d %B %Y" }}</p>
-			{{ eventItem.content | truncatewords: 5, ' <a class="no-underline" href="' | append: eventItem.url | append: '">[...]</a>' }}
-		</div>
-		{% endfor %}
-	</div>
+  <div>
+    {% assign futureEvents = event | futureEvents | sort: "date" %}
+    {% for eventItem in futureEvents %}
+    <div class="eventItem" id="{{ eventItem.title | slugify }}">
+      {% assign theDate = eventItem.date | date: "%Y %B %d%q" %}
+      <h3>
+        <a class="open" href="#modal-{{ eventItem.title | slugify }}"
+           onclick="showModal('modal-{{ eventItem.title | slugify }}')">
+          {{ eventItem.title }}
+        </a>
+      </h3>
+      <p class="gray">{{ eventItem.date | date: "%A, %d %B %Y" }}</p>
+      {{ eventItem.content | truncatewords: 5, ' <a class="no-underline" href="/events/' | append: eventItem.title | slugify | append: '">[...]</a>' }}
+    </div>
+    {% endfor %}
+  </div>
 
-	<br />
-	<hr />
-	<br />
+  <br />
+  <hr />
+  <br />
 
-	<p>Curious about what we've done in the past?</p>
-	<div>
-		{% assign pastEvents = event | pastEvents | sort: "date" %}
-		{% for eventItem in pastEvents reversed %}
-		<div class="eventItem" id="{{ eventItem.title | slugify }}">
-			<h3><a class="open" href="#modal-{{ eventItem.title | slugify }}"
-					onclick="showModal('modal-{{ eventItem.title | slugify }}')">{{ eventItem.title }}</a></h3>
-			<p class="gray">{{ eventItem.date | date: "%A, %d %B %Y" }}</p>
-			{{ eventItem.content | truncatewords: 4, ' <a class="no-underline" href="' | append: eventItem.url | append: '">[...]</a>' }}
-		</div>
-		{% endfor %}
-	</div>
+  <p>Curious about what we've done in the past?</p>
+  <div>
+    {% assign pastEvents = event | pastEvents | sort: "date" %}
+    {% for eventItem in pastEvents reversed %}
+    <div class="eventItem" id="{{ eventItem.title | slugify }}">
+      <h3>
+        <a class="open" href="#modal-{{ eventItem.title | slugify }}"
+           onclick="showModal('modal-{{ eventItem.title | slugify }}')">
+          {{ eventItem.title }}
+        </a>
+      </h3>
+      <p class="gray">{{ eventItem.date | date: "%A, %d %B %Y" }}</p>
+      {{ eventItem.content | truncatewords: 5, ' <a class="no-underline" href="/events/' | append: eventItem.title | slugify | append: '">[...]</a>' }}
+    </div>
+    {% endfor %}
+  </div>
 </div>
 
 {% for eventItem in event %}
 <div class="modal hidden fade-in" id="modal-{{ eventItem.title | slugify }}">
-	<div>
-		<a class="close" href="#{{ eventItem.title | slugify }}"
-			onclick="closeModal('modal-{{ eventItem.title | slugify }}')">x</a>
-		<div class="">
-			<h2>{{ eventItem.title }}</h2>
-			<p class="medium">{{ eventItem.location }}</p>
-			<p class="gray medium">{{ eventItem.date | date: "%Y %B %d" }}</p>
+  <div>
+    <a class="close" href="#{{ eventItem.title | slugify }}"
+       onclick="closeModal('modal-{{ eventItem.title | slugify }}')">x</a>
+    <div class="">
+      <h2>{{ eventItem.title }}</h2>
+      <p class="medium">{{ eventItem.location }}</p>
+      <p class="gray medium">{{ eventItem.date | date: "%Y %B %d%q" }}</p>
 
-			<br />
-			<hr />
-			<br />
+      <br />
+      <hr />
+      <br />
 
-			{{ eventItem.content }}
+      {{ eventItem.content }}
 
-			{% if eventItem.images %}
-				<div class="event-images">
-					<h4>Pictures of Event:</h4>
-					<div class="image-gallery">
-						{% for img in eventItem.images %}
-							<img src="{{ img }}" alt="{{ eventItem.title }} photo" />
-						{% endfor %}
-					</div>
-				</div>
-			{% endif %}
-		</div>
-	</div>
+      {% if eventItem.images %}
+      <div class="event-images">
+        <h4>Pictures of Event:</h4>
+        <div class="image-gallery">
+          {% for img in eventItem.images %}
+            <img src="{{ img }}" alt="{{ eventItem.title }} photo" />
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
 </div>
 {% endfor %}
 
