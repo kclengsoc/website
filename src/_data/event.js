@@ -15,7 +15,7 @@ export default [
     images: ["/static/img/frontpage-5.jpeg", "/static/img/frontpage-6.png", "/static/img/frontpage-7.jpeg"]
   },
   {
-    title: "MATLAB Onramp part",
+    title: "MATLAB Onramp party",
     date: "2025-10-1",
     location: "KIN G40",
     content: "MATLAB Onramp hosted by KCL MATLAB Ambassador.",
