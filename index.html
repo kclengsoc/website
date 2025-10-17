@@ -35,12 +35,13 @@
 	<link rel="stylesheet" href="/static/css/site.css" />
 
 	<style>
-		body, html {
+		body,
+		html {
 			height: 100%;
 			transform: translateZ(0);
 		}
 
-		/* Hover effect for homepage left/right images only */
+		/* Hover effect for homepage left/right images */
 		.left-img img,
 		.right-img img {
 			transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -53,18 +54,35 @@
 			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 		}
 
-		/* Scroll animation base state */
-		.scroll-fade {
+		/* Hero underline animation */
+		.emphasis b {
+			position: relative;
+			display: inline-block;
+			font-weight: 700;
 			opacity: 0;
-			transform: translateY(40px);
-			transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-			will-change: opacity, transform;
+			transform: translateY(20px);
+			transition: all 0.6s ease;
 		}
 
-		/* When visible */
-		.scroll-fade.visible {
+		.emphasis b::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			width: 0;
+			height: 2px;
+			background: crimson;
+			transition: all 0.6s ease;
+			transform: translateX(-50%);
+		}
+
+		.emphasis b.animate {
 			opacity: 1;
 			transform: translateY(0);
+		}
+
+		.emphasis b.animate::after {
+			width: 100%;
 		}
 	</style>
 </head>
@@ -273,21 +291,15 @@
 </script>
 
 
+	<!-- JS animation for hero underline -->
 	<script>
-		// Fade-in animation when elements come into view
-		document.addEventListener("DOMContentLoaded", function () {
-			const observer = new IntersectionObserver((entries) => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add("visible");
-						observer.unobserve(entry.target); // Stop observing once revealed
-					}
-				});
-			}, { threshold: 0.2 }); // Trigger when 20% visible
-
-			document.querySelectorAll('.scroll-fade').forEach(el => {
-				observer.observe(el);
-			});
+		document.addEventListener("DOMContentLoaded", () => {
+			const heroText = document.querySelector(".emphasis b");
+			if (heroText) {
+				setTimeout(() => {
+					heroText.classList.add("animate");
+				}, 500); // delay for smoother entry
+			}
 		});
 	</script>
 </body>
