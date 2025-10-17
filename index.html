@@ -70,13 +70,27 @@
 </head>
 
 <body>
-	<div class="parallax full-width">
+	
+<div class="parallax full-width">
 	<style>
 		header {
 			z-index: 2;
 			position: relative;
 		}
+
+		/* Fade-in animation setup */
+		.scroll-fade {
+			opacity: 0;
+			transform: translateY(30px);
+			transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+		}
+
+		.scroll-fade.visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	</style>
+
 	<header>
   <div class="logo">
     <a href="/" >
@@ -95,19 +109,17 @@
 
 
 	<div class="parallax__group reading-width" style="z-index:0;">
-		<div class="parallax__layer parallax__layer--back">
+		<div class="parallax__layer parallax__layer--back scroll-fade">
 			<p class="emphasis"><b>King's College London Engineering Society</b></p>
 		</div>
 	</div>
 
 	<div class="parallax__group parallax__layer--base bg-dark" style="z-index:1;">
-		<div class="parallax__layer parallax__layer--base">
+		<div class="parallax__layer parallax__layer--base scroll-fade">
 			<div class="reading-width">
-				<p class="large">We are the oldest collegiate society of
-					our kind in the world.</p>
+				<p class="large">We are the oldest collegiate society of our kind in the world.</p>
 				<br />
-				<p class="large">Founded in 1847, our society welcomes all students interested in the advancement and future of
-					engineering.</p>
+				<p class="large">Founded in 1847, our society welcomes all students interested in the advancement and future of engineering.</p>
 			</div>
 		</div>
 	</div>
@@ -115,12 +127,12 @@
 	<div class="section-separator"></div>
 
 	<div class="home-content">
-		<section class="left">
+		<section class="left scroll-fade">
 			<h1>Who We Are</h1>
 			<p>We’re a student-led society at King’s College London that unites engineers and innovators from every discipline.</p>
 		</section>
 
-		<section class="right-img">
+		<section class="right-img scroll-fade">
 			<img src="/static/img/frontpage-1.jpeg" />
 		</section>
 	</div>
@@ -128,36 +140,33 @@
 	<div class="section-separator"></div>
 
 	<div class="home-content">
-		<section class="left-img">
+		<section class="left-img scroll-fade">
 			<img src="/static/img/frontpage-2.jpeg" />
 		</section>
-		<section class="right">
+		<section class="right scroll-fade">
 			<h1>What We Do</h1>
-			<p>Our aim is to make engineering accessible to everyone. With close communication to engineering staff at
-				King's, we shape the future of our own education, and gain access to cutting-edge equipment for our learning.
-			</p>
+			<p>Our aim is to make engineering accessible to everyone. With close communication to engineering staff at King's, we shape the future of our own education, and gain access to cutting-edge equipment for our learning.</p>
 		</section>
 	</div>
 
 	<div class="section-separator"></div>
 
 	<div class="home-content">
-		<section class="left">
+		<section class="left scroll-fade">
 			<h1>Upcoming Events</h1>
-			<p>We host events throughout the year, ranging from CAD workshops, social meetups, and external
-				engineering speakers. Check out what we have coming up, or sign up for our newsletter.</p>
+			<p>We host events throughout the year, ranging from CAD workshops, social meetups, and external engineering speakers. Check out what we have coming up, or sign up for our newsletter.</p>
 		</section>
 
-		<section class="right">
+		<section class="right scroll-fade">
 			
 			
-			<div class="eventItem">
+			<div class="eventItem scroll-fade">
 				<h2><a href="/events/matlab-workshop">MATLAB Workshop</a></h2>
 				<p class="gray">Wednesday, 22 October 2025</p>
 				Workshop on MATLAB with KCL MATLAB ambassador
 			</div>
 			
-			<div class="eventItem">
+			<div class="eventItem scroll-fade">
 				<h2><a href="/events/cross-society-networking-event-grow-your-ecosystem">Cross-society networking event: Grow your ecosySTEM</a></h2>
 				<p class="gray">Wednesday, 29 October 2025</p>
 				Join us for an evening of connection, collaboration and activities as KCL STEM societies come together!
@@ -170,7 +179,7 @@
 	<hr class="reading-width" />
 	<br />
 
-	<div class="center reading-width">
+	<div class="center reading-width scroll-fade">
 		<p class="medium"><b>Ready to join us in making a better future?</b></p>
 		<a href="https://www.kclsu.org/organisation/11124/">Buy our KCLSU membership</a>
 		<br />
@@ -217,6 +226,22 @@
 </footer>
 
 </div>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		const elements = document.querySelectorAll(".scroll-fade");
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add("visible");
+					observer.unobserve(entry.target);
+				}
+			});
+		}, { threshold: 0.2 });
+
+		elements.forEach(el => observer.observe(el));
+	});
+</script>
 
 
 	<script>
