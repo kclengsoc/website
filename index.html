@@ -33,6 +33,7 @@
 	<link rel="manifest" href="/static/site.webmanifest" />
 
 	<link rel="stylesheet" href="/static/css/site.css" />
+
 	<style>
 		body, html {
 			height: 100%;
@@ -48,8 +49,22 @@
 
 		.left-img img:hover,
 		.right-img img:hover {
-			transform: scale(1.05); /* slightly bigger */
-			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* subtle shadow */
+			transform: scale(1.05);
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+		}
+
+		/* Scroll animation base state */
+		.scroll-fade {
+			opacity: 0;
+			transform: translateY(40px);
+			transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+			will-change: opacity, transform;
+		}
+
+		/* When visible */
+		.scroll-fade.visible {
+			opacity: 1;
+			transform: translateY(0);
 		}
 	</style>
 </head>
@@ -203,6 +218,24 @@
 
 </div>
 
+
+	<script>
+		// Fade-in animation when elements come into view
+		document.addEventListener("DOMContentLoaded", function () {
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add("visible");
+						observer.unobserve(entry.target); // Stop observing once revealed
+					}
+				});
+			}, { threshold: 0.2 }); // Trigger when 20% visible
+
+			document.querySelectorAll('.scroll-fade').forEach(el => {
+				observer.observe(el);
+			});
+		});
+	</script>
 </body>
 
 </html>
