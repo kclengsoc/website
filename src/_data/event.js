@@ -39,5 +39,10 @@ export default [
     date: "2025-10-29",
     location: "Engineering Quad, Rooms Q-126 & Q-1.47, in Strand Campus",
     content: "Join us for an evening of connection, collaboration and activities as KCL STEM societies come together!"
+  },
+  { title: "KCL X UCL Boat party",
+    date: "2025,12,03",
+    location: "Westminister pier - 6:30 - 11:00 pm",
+    content: "Join King’s College London × UCL Engineering Society for an unforgettable Boat Party aboard the Jewel of London for stunning city views, a live DJ, great vibes, and an amazing crowd as two top London universities come together for an epic night of music and celebration."
   }
 ];
