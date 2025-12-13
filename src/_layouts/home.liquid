@@ -35,13 +35,12 @@
 	<link rel="stylesheet" href="/static/css/site.css" />
 
 	<style>
-		body,
-		html {
+		body, html {
 			height: 100%;
 			transform: translateZ(0);
 		}
 
-		/* Hover effect for homepage left/right images */
+		/* Hover effect for homepage left/right images only */
 		.left-img img,
 		.right-img img {
 			transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -54,46 +53,18 @@
 			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 		}
 
-		/* Hero underline animation */
-		.emphasis b {
-			position: relative;
-			display: inline-block;
-			font-weight: 700;
+		/* Scroll animation base state */
+		.scroll-fade {
 			opacity: 0;
-			transform: translateY(20px);
-			transition: all 0.6s ease;
+			transform: translateY(40px);
+			transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+			will-change: opacity, transform;
 		}
 
-		.emphasis b::after {
-			content: "";
-			position: absolute;
-			bottom: 0;
-			left: 50%;
-			width: 0;
-			height: 2px;
-			background: crimson;
-			transition: all 0.6s ease;
-			transform: translateX(-50%);
-		}
-
-		.emphasis b.animate {
+		/* When visible */
+		.scroll-fade.visible {
 			opacity: 1;
 			transform: translateY(0);
-		}
-
-		.emphasis b.animate::after {
-			width: 100%;
-		}
-
-		/* Social icons hover effect */
-		.socials svg {
-			transition: transform 0.3s ease, filter 0.3s ease;
-			cursor: pointer;
-		}
-
-		.socials svg:hover {
-			transform: scale(1.2);
-			filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
 		}
 	</style>
 </head>
@@ -101,41 +72,21 @@
 <body>
 	{{ content }}
 
-	<!-- Social Icons -->
-	<div class="socials" style="display: flex; justify-content: center; gap: 20px; margin-top: 40px;">
-
-		<!-- Instagram -->
-		<a class="icon-button" href="https://www.instagram.com/kclengsoc" aria-label="instagram" target="_blank">
-			<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 50 50">
-				<path d="M16 3C8.83 3 3 8.83 3 16v18c0 7.17 5.83 13 13 13h18c7.17 0 13-5.83 13-13V16c0-7.17-5.83-13-13-13H16zm0 2h18c6.08 0 11 4.92 11 11v18c0 6.08-4.92 11-11 11H16c-6.08 0-11-4.92-11-11V16c0-6.08 4.92-11 11-11zm21 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM25 14c-6.06 0-11 4.94-11 11s4.94 11 11 11 11-4.94 11-11-4.94-11-11-11zm0 2c4.98 0 9 4.02 9 9s-4.02 9-9 9-9-4.02-9-9 4.02-9 9-9z"/>
-			</svg>
-		</a>
-
-		<!-- WhatsApp -->
-		<a class="icon-button" href="https://chat.whatsapp.com/IJg78bpJnqTDkjkRFzfBSo" aria-label="whatsapp" target="_blank">
-			<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 50 50">
-				<path d="M25,3C13.42,3,4,12.42,4,24c0,4.36,1.38,8.43,3.92,11.89L6,47l11.36-1.9C20.18,46.35,22.56,47,25,47c11.58,0,21-9.42,21-21S36.58,3,25,3z M25,43c-2.06,0-4.07-0.42-5.96-1.25l-0.43-0.19l-6.74,1.12l1.3-6.57l-0.28-0.44C10.86,33.3,10,29.7,10,26 c0-8.27,6.73-15,15-15s15,6.73,15,15S33.27,43,25,43z M34.58,29.63c-0.55-0.27-3.24-1.6-3.75-1.78s-0.87-0.27-1.23,0.27 s-1.41,1.78-1.73,2.15s-0.64,0.4-1.19,0.13c-0.55-0.27-2.33-0.86-4.45-2.73c-1.64-1.46-2.74-3.26-3.06-3.81 c-0.32-0.55-0.03-0.85,0.24-1.12c0.25-0.25,0.55-0.64,0.82-0.96c0.27-0.32,0.36-0.55,0.55-0.91c0.18-0.36,0.09-0.68-0.04-0.96 s-1.23-2.96-1.68-4.06c-0.44-1.07-0.89-0.92-1.23-0.94c-0.32-0.02-0.68-0.02-1.04-0.02c-0.36,0-0.96,0.13-1.46,0.68 c-0.5,0.55-1.91,1.87-1.91,4.55s1.95,5.28,2.22,5.63c0.27,0.36,3.83,5.85,9.28,8.21c1.3,0.56,2.32,0.89,3.11,1.14 c1.3,0.41,2.48,0.35,3.41,0.21c1.04-0.16,3.24-1.32,3.69-2.6c0.46-1.28,0.46-2.38,0.32-2.6C35.46,30.02,35.14,29.9,34.58,29.63z"/>
-			</svg>
-		</a>
-
-		<!-- Boat Party (NEW) -->
-		<a class="icon-button" href="https://www.kclsu.org/organisation/11124/" aria-label="boat party" target="_blank">
-			<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-				<path d="M4 44l8 8h40l8-8H4zm28-32l-8 24h16l-8-24zm0-8l4 12h12v8h-32v-8h12l4-12z"/>
-			</svg>
-		</a>
-
-	</div>
-
-	<!-- JS animation for hero underline -->
 	<script>
-		document.addEventListener("DOMContentLoaded", () => {
-			const heroText = document.querySelector(".emphasis b");
-			if (heroText) {
-				setTimeout(() => {
-					heroText.classList.add("animate");
-				}, 500);
-			}
+		// Fade-in animation when elements come into view
+		document.addEventListener("DOMContentLoaded", function () {
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add("visible");
+						observer.unobserve(entry.target); // Stop observing once revealed
+					}
+				});
+			}, { threshold: 0.2 }); // Trigger when 20% visible
+
+			document.querySelectorAll('.scroll-fade').forEach(el => {
+				observer.observe(el);
+			});
 		});
 	</script>
 </body>
